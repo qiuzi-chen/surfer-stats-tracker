@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1671.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.s1 {font: 12.0px 'PingFang SC'}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;LA Surfer Stats Dashboard&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- <span class="s1">移动端自适配关键</span> meta --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #E6E6E6; /* <span class="s1">页面浅灰色背景</span> */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* <span class="s1">默认：桌面端使用固定尺寸</span> 1200×1500 */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.page-container {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 1200px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 1500px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 40px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 0 20px rgba(0,0,0,0.15);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #002f4b;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.subtitle {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #4a6fa5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.5;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Tableau <span class="s1">容器：桌面端固定高度</span> */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.tableau-wrapper {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 1100px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 4px 16px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.tableau-wrapper iframe {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>footer {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #5b7aa3;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ---------- <span class="s1">手机端适配（小于等于</span> 768px <span class="s1">宽的屏幕）</span> ---------- */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>align-items: stretch;<span class="Apple-converted-space">    </span>/* <span class="s1">让容器贴合顶部</span>/<span class="s1">底部</span> */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>.page-container {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>width: 100%;<span class="Apple-converted-space">            </span>/* <span class="s1">占满手机屏宽度</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>height: auto; <span class="Apple-converted-space">          </span>/* <span class="s1">高度自适应内容</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>min-height: 100vh;<span class="Apple-converted-space">      </span>/* <span class="s1">至少跟屏幕一样高</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>padding: 16px 12px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box-shadow: none; <span class="Apple-converted-space">      </span>/* <span class="s1">去掉重阴影，手机上更轻盈</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>border-radius: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>font-size: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>.subtitle {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>margin-bottom: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>/* <span class="s1">手机端让</span> Tableau <span class="s1">更贴屏幕，按视口高度来适配</span> */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.tableau-wrapper {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>height: 70vh;<span class="Apple-converted-space">          </span>/* <span class="s1">大约占</span> 70% <span class="s1">屏幕高度，可按需求调整</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box-shadow: 0 2px 10px rgba(0,0,0,0.12);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>footer {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>margin-top: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="page-container"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;LA Surfer Stats Dashboard&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="subtitle"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>A visualization project tracking surfing performance across Los Angeles surf breaks.&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>View wave count, speeds, endurance, and progression trends.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="tableau-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;iframe<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>src="https://public.tableau.com/views/SurfStatsTracker/Dashboard?:showVizHome=no&amp;:embed=true"</p>
+<p class="p1"><span class="Apple-converted-space">        </span>allowfullscreen="true"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/iframe&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>© 2025 LA Surfer Stats | Powered by Tableau Public</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
